@@ -2,6 +2,8 @@ require("matthew.remap")
 require("matthew.set")
 require("matthew.lazy_init")
 
+vim.opt.autoread = true
+
 local augroup = vim.api.nvim_create_augroup
 local matthewGroup = augroup('matthew', {})
 
@@ -33,6 +35,12 @@ autocmd({"BufWritePre"}, {
     group = matthewGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
+})
+
+autocmd({"FocusGained", "BufEnter"}, {
+    group = matthewGroup,
+    pattern = "*",
+    command = "checktime",
 })
 
 autocmd('LspAttach', {
