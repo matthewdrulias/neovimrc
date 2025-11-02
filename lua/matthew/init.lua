@@ -1,5 +1,5 @@
-require("matthew.remap")
 require("matthew.set")
+require("matthew.remap")
 require("matthew.lazy_init")
 
 vim.opt.autoread = true
