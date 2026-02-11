@@ -54,3 +54,10 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+if vim.fn.has('macunix') == 1 then
+    -- Ctrl+Shift+C/V for clipboard (works through tmux, no Karabiner conversion)
+    vim.keymap.set('v', '<C-S-c>', '"+y', { desc = 'Copy to system clipboard' })
+    vim.keymap.set('n', '<C-S-v>', '"+p', { desc = 'Paste from system clipboard' })
+    vim.keymap.set('i', '<C-S-v>', '<C-r>+', { desc = 'Paste from system clipboard' })
+    vim.keymap.set('v', '<C-S-v>', '"+p', { desc = 'Paste from system clipboard' })
+end

@@ -66,5 +66,6 @@ vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
 -- Load artix-ice colorscheme
-require('matthew.artix-ice').setup()
-
+-- require('matthew.artix-ice').setup()
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
